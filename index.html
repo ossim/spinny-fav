@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="128x128" href="fav/fav0.png">
+    <title>Spinny</title>
+  </head>
+  <body>
+    <div class="text">Scroll down to spin!</div>
+    <div class="height"></div>
+    <script type="text/javascript" src="https://unpkg.com/favicon.js@1.0.0/dist/favicon.min.js">
+    </script>
+    <script type="text/javascript">
+    var currScroll = 0;
+    favicon.defaultPause = 10;
+
+    window.onscroll = function() {currScroll = scrollCheck(currScroll)};
+
+    function scrollCheck(currScroll) {
+      const stepSize = 200;
+      const stepVal = Math.floor(document.documentElement.scrollTop / stepSize) % 15
+      console.log('scrollCheck', Math.floor(document.documentElement.scrollTop / stepSize))
+      if (currScroll != stepVal) {
+          favicon.change('fav/fav' + stepVal + '.png')
+          currScroll = stepVal
+          console.log('update fav to ' + stepVal)
+      }
+      return currScroll
+    }
+
+    </script>
+  </body>
+</html>

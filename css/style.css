@@ -1,0 +1,14 @@
+.height {
+  height: 4000px;
+}
+
+.text {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+}
+
+body {
+  background-color: #f8f8f8;
+  color: #333333;
+}
