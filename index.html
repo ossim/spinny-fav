@@ -20,11 +20,9 @@
     function scrollCheck(currScroll) {
       const stepSize = 200;
       const stepVal = Math.floor(document.documentElement.scrollTop / stepSize) % 15
-      console.log('scrollCheck', Math.floor(document.documentElement.scrollTop / stepSize))
       if (currScroll != stepVal) {
           favicon.change('fav/fav' + stepVal + '.png')
           currScroll = stepVal
-          console.log('update fav to ' + stepVal)
       }
       return currScroll
     }
